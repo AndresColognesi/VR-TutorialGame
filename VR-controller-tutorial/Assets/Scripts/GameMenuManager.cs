@@ -13,6 +13,10 @@ public class GameMenuManager : MonoBehaviour
     [SerializeField] private GameObject menu;
     // Input action to trigger event:
     [SerializeField] private InputActionProperty showButton;
+    // Reference to player head:
+    [SerializeField] private Transform head;
+    // Offset distance from menu to head:
+    [SerializeField] float spawnDistance = 2;
 
 
 
@@ -23,6 +27,12 @@ public class GameMenuManager : MonoBehaviour
         {
             // Make menu canvas appear:
             menu.SetActive(!menu.activeSelf);
+            // Translate the menu to the front of the player view:
+            menu.transform.position = head.position + new Vector3(head.forward.x, 0, head.forward.z).normalized * spawnDistance;
         }
+        // Make canvas perpendicular to player view and follow player head movement:
+        menu.transform.LookAt(new Vector3(head.position.x, menu.transform.position.y, head.position.z));
+        // Flip canvas:
+        menu.transform.forward *= -1;
     }
 }
