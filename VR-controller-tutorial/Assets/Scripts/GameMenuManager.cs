@@ -16,7 +16,7 @@ public class GameMenuManager : MonoBehaviour
     // Reference to player head:
     [SerializeField] private Transform head;
     // Offset distance from menu to head:
-    [SerializeField] float spawnDistance = 0.5f;
+    private float spawnDistance = 1f;
 
 
 
