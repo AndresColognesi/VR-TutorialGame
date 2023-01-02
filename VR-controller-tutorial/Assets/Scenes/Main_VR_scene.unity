@@ -2424,7 +2424,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -8558375376727368261, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
-  head: {fileID: 0}
+  head: {fileID: 1322408215}
   spawnDistance: 2
 --- !u!1 &968376882
 GameObject:
