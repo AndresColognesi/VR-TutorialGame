@@ -80,12 +80,12 @@ public class HapticInteractable : MonoBehaviour
         // Add custom method as listener when an Activation event occurs:
         interactable.activated.AddListener(hapticOnActivated.TriggerHaptic);
         // Add custom method as listener when an Hover Enter event occurs:
-        interactable.activated.AddListener(hapticHoverEntered.TriggerHaptic);
+        interactable.hoverEntered.AddListener(hapticHoverEntered.TriggerHaptic);
         // Add custom method as listener when an Hover Exit event occurs:
-        interactable.activated.AddListener(hapticHoverExited.TriggerHaptic);
+        interactable.hoverExited.AddListener(hapticHoverExited.TriggerHaptic);
         // Add custom method as listener when an Select Enter event occurs:
-        interactable.activated.AddListener(hapticSelectEntered.TriggerHaptic);
+        interactable.selectEntered.AddListener(hapticSelectEntered.TriggerHaptic);
         // Add custom method as listener when an Select Exit event occurs:
-        interactable.activated.AddListener(hapticSelectExited.TriggerHaptic);
+        interactable.selectExited.AddListener(hapticSelectExited.TriggerHaptic);
     }
 }

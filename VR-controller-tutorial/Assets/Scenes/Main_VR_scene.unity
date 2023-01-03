@@ -4985,11 +4985,11 @@ MonoBehaviour:
     intensity: 0.5
     duration: 0.3
   hapticHoverEntered:
-    intensity: 0
-    duration: 0
+    intensity: 0.1
+    duration: 0.2
   hapticHoverExited:
-    intensity: 0
-    duration: 0
+    intensity: 0.1
+    duration: 0.2
   hapticSelectEntered:
     intensity: 0.3
     duration: 0.3
