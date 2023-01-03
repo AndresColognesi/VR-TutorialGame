@@ -4985,17 +4985,17 @@ MonoBehaviour:
     intensity: 0.5
     duration: 0.3
   hapticHoverEntered:
-    intensity: 0.1
-    duration: 0.2
+    intensity: 0
+    duration: 0
   hapticHoverExited:
-    intensity: 0.1
-    duration: 0.2
+    intensity: 0
+    duration: 0
   hapticSelectEntered:
-    intensity: 0.3
-    duration: 0.3
+    intensity: 0.1
+    duration: 0.1
   hapticSelectExited:
-    intensity: 0.3
-    duration: 0.3
+    intensity: 0.1
+    duration: 0.1
 --- !u!1 &1793329673
 GameObject:
   m_ObjectHideFlags: 0
