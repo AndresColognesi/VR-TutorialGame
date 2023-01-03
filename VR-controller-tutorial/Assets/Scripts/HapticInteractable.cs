@@ -3,32 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class HapticInteractable : MonoBehaviour
+//--------------------//
+//--- Custom Class ---//
+//--------------------//
+
+[System.Serializable] //to display on the Unity Editor
+public class Haptic
 {
     //------------------//
     //--- Parameters ---//
     //------------------//
 
     // Haptic feedback parameters:
-    [Range(0,1)] //set 0 to 1 slider for variable below
+    [Range(0, 1)] //set 0 to 1 slider for variable below
     [SerializeField] private float intensity;
     [SerializeField] private float duration;
-
-
-
-    //-------------//
-    //--- Start ---//
-    //-------------//
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        // Get current object interactable:
-        XRBaseInteractable interactable = GetComponent<XRBaseInteractable>();
-        // Add custom method as listener when an Activation event occurs:
-        interactable.activated.AddListener(TriggerHaptic);
-    }
-
 
 
     //---------------//
@@ -42,7 +31,7 @@ public class HapticInteractable : MonoBehaviour
          * function if the given event object is an XRBaseController.
          ***/
 
-        if(eventArgs.interactorObject is XRBaseControllerInteractor controllerInteractor)
+        if (eventArgs.interactorObject is XRBaseControllerInteractor controllerInteractor)
         {
             // Call the haptic feedback function:
             TriggerHaptic(controllerInteractor.xrController);
@@ -62,4 +51,28 @@ public class HapticInteractable : MonoBehaviour
             controller.SendHapticImpulse(intensity, duration);
         }
     }
+}
+
+
+
+//-------------------------------//
+//--- Main Monobehavior Class ---//
+//-------------------------------//
+public class HapticInteractable : MonoBehaviour
+{
+    //------------------//
+    //--- Parameters ---//
+    //------------------//
+
+    [SerializeField] private Haptic hapticOnActivated;
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        // Get current object interactable:
+        XRBaseInteractable interactable = GetComponent<XRBaseInteractable>();
+        // Add custom method as listener when an Activation event occurs:
+        interactable.activated.AddListener(hapticOnActivated.TriggerHaptic);
+    }   
 }

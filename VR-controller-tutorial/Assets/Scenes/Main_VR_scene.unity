@@ -4981,8 +4981,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6855be9951b0b6c4d83c383cdcdb68c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensity: 0
-  duration: 0
+  hapticOnActivated:
+    intensity: 0.5
+    duration: 0.3
 --- !u!1 &1793329673
 GameObject:
   m_ObjectHideFlags: 0
