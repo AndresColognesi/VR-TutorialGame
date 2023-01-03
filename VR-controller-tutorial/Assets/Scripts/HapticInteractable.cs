@@ -65,6 +65,10 @@ public class HapticInteractable : MonoBehaviour
     //------------------//
 
     [SerializeField] private Haptic hapticOnActivated;
+    [SerializeField] private Haptic hapticHoverEntered;
+    [SerializeField] private Haptic hapticHoverExited;
+    [SerializeField] private Haptic hapticSelectEntered;
+    [SerializeField] private Haptic hapticSelectExited;
 
 
     // Start is called before the first frame update
@@ -72,7 +76,16 @@ public class HapticInteractable : MonoBehaviour
     {
         // Get current object interactable:
         XRBaseInteractable interactable = GetComponent<XRBaseInteractable>();
+
         // Add custom method as listener when an Activation event occurs:
         interactable.activated.AddListener(hapticOnActivated.TriggerHaptic);
-    }   
+        // Add custom method as listener when an Hover Enter event occurs:
+        interactable.activated.AddListener(hapticHoverEntered.TriggerHaptic);
+        // Add custom method as listener when an Hover Exit event occurs:
+        interactable.activated.AddListener(hapticHoverExited.TriggerHaptic);
+        // Add custom method as listener when an Select Enter event occurs:
+        interactable.activated.AddListener(hapticSelectEntered.TriggerHaptic);
+        // Add custom method as listener when an Select Exit event occurs:
+        interactable.activated.AddListener(hapticSelectExited.TriggerHaptic);
+    }
 }
