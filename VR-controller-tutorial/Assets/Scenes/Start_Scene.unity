@@ -810,31 +810,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5376161064616411976, guid: 233649551c9c2a641936d42fec5c08e3,
-        type: 3}
-      propertyPath: m_Name
-      value: LeftHand RayInteractor
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376161064616412019, guid: 233649551c9c2a641936d42fec5c08e3,
-        type: 3}
-      propertyPath: m_InteractionLayers.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376161064616412019, guid: 233649551c9c2a641936d42fec5c08e3,
-        type: 3}
-      propertyPath: m_PlayHapticsOnSelectEntered
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376161065192021702, guid: 233649551c9c2a641936d42fec5c08e3,
-        type: 3}
-      propertyPath: m_InteractionLayers.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376161065192021723, guid: 233649551c9c2a641936d42fec5c08e3,
-        type: 3}
-      propertyPath: m_Name
-      value: RightHand RayInteractor
-      objectReference: {fileID: 0}
     - target: {fileID: 7390016296145873288, guid: 233649551c9c2a641936d42fec5c08e3,
         type: 3}
       propertyPath: m_Name
