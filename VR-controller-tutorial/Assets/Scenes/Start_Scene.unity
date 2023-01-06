@@ -519,7 +519,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6712086066749341456}
         m_TargetAssemblyTypeName: LoadNextScene, Assembly-CSharp
         m_MethodName: LoadNext
         m_Mode: 1
@@ -801,3 +801,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 174c11cadddeb4842a064809cfc1cd5a, type: 3}
+--- !u!114 &6712086066749341456 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1183924300207792657, guid: 174c11cadddeb4842a064809cfc1cd5a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6712086066749341455}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb82b27ab0709140ac96233882396ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
