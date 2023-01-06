@@ -15,7 +15,10 @@ public class TargetProperties : MonoBehaviour
     // Dropdown with Target types:
     private enum TargetType { L, M, S };
     [SerializeField] TargetType targetType;
-    
+
+    // Sound effect for collision:
+    private AudioSource collision_soundFX;
+
     // Class attributes:
     private int target_score;
 
@@ -32,6 +35,10 @@ public class TargetProperties : MonoBehaviour
         gameManager = GameObject.FindWithTag("GameManager");
         // Retrieve score counter component from active game manager:
         scoreCounter = gameManager.GetComponent<ScoreCounter>();
+
+        // Get audio source from current game object:
+        collision_soundFX = gameObject.GetComponent<AudioSource>();
+
         // Set the score based on the type:
         switch (targetType)
         {
@@ -72,6 +79,8 @@ public class TargetProperties : MonoBehaviour
 
         if (collision.collider.tag == "Bullet")
         {
+            // Play collision sound effect:
+            collision_soundFX.Play();
             // Add target score to total level score:
             scoreCounter.AddScore(target_score);
             // Display total score:
