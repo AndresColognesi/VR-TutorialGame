@@ -8,6 +8,9 @@ public class TargetProperties : MonoBehaviour
     // Properties //
     //------------//
 
+    // Access the Game Manager score counter class:
+    [SerializeField] private ScoreCounter scoreCounter;
+
     // Dropdown with Target types:
     private enum TargetType { L, M, S };
     [SerializeField] TargetType targetType;
@@ -40,7 +43,11 @@ public class TargetProperties : MonoBehaviour
 
         if (collision.collider.tag == "Bullet")
         {
+            // Add target score to total level score:
+            scoreCounter.AddScore(target_score);
+            // Display total score:
             Debug.Log("Scored " + target_score.ToString() + " points!");
+            Debug.Log("Total Points: " + scoreCounter.GetTotalScore().ToString());
         }
 
     }
