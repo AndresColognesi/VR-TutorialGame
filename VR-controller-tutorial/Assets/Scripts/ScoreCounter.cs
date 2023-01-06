@@ -26,9 +26,9 @@ public class ScoreCounter : MonoBehaviour
     void Start()
     {
         // Set the finishing level score for the current scene:
-        finish_level_score = SceneManager.GetActiveScene().buildIndex * 10;
+        finish_level_score = SceneManager.GetActiveScene().buildIndex * 100;
 
-        // Get the LoadNextLevel component of this game object:
+        // Get the LoadNextScene component of this game object:
         loadNextScene = gameObject.GetComponent<LoadNextScene>();
     }
 
@@ -73,11 +73,11 @@ public class ScoreCounter : MonoBehaviour
          * the desired value for the level and changes to next scene/level.
          ***/
 
-        if (total_score == finish_level_score) //meaning the level is complete
+        if (total_score >= finish_level_score) //meaning the level is complete
         {
             // Reset the total score:
             ClearTotalScore();
-            // Change to next level:
+            // Change to next level with delay:
             loadNextScene.LoadNext();
         }
     }

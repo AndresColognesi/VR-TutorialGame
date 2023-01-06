@@ -48,6 +48,8 @@ public class TargetProperties : MonoBehaviour
             // Display total score:
             Debug.Log("Scored " + target_score.ToString() + " points!");
             Debug.Log("Total Points: " + scoreCounter.GetTotalScore().ToString());
+            // Check if level is complete:
+            scoreCounter.CheckLevelFinished();
         }
 
     }

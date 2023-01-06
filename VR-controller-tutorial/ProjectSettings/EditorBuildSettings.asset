@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ShooterMission1.unity
     guid: 55af74949202bb247a18b36eafd13366
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Tutorial_VR_Scene.unity
     guid: 5c9073bfb4678564483bb3a6ccc0f398
   m_configObjects:
