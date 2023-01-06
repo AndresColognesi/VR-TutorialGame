@@ -8,8 +8,9 @@ public class TargetProperties : MonoBehaviour
     // Properties //
     //------------//
 
-    // Access the Game Manager score counter class:
-    [SerializeField] private ScoreCounter scoreCounter;
+    // Access the Game Manager to get score counter class:
+    private GameObject gameManager;
+    private ScoreCounter scoreCounter;
 
     // Dropdown with Target types:
     private enum TargetType { L, M, S };
@@ -17,6 +18,34 @@ public class TargetProperties : MonoBehaviour
     
     // Class attributes:
     private int target_score;
+
+
+
+    //------------------------//
+    //--- Built-in Methods ---//
+    //------------------------//
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        // Find active Game Manager:
+        gameManager = GameObject.FindWithTag("GameManager");
+        // Retrieve score counter component from active game manager:
+        scoreCounter = gameManager.GetComponent<ScoreCounter>();
+        // Set the score based on the type:
+        switch (targetType)
+        {
+            case TargetType.L:
+                target_score = 10;
+                break;
+            case TargetType.M:
+                target_score = 30;
+                break;
+            case TargetType.S:
+                target_score = 100;
+                break;
+        }
+    }
 
 
 
@@ -51,28 +80,6 @@ public class TargetProperties : MonoBehaviour
             // Check if level is complete:
             scoreCounter.CheckLevelFinished();
         }
-
     }
 
-    //------------------------//
-    //--- Built-in Methods ---//
-    //------------------------//
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        // Set the score based on the type:
-        switch (targetType)
-        {
-            case TargetType.L:
-                target_score = 10;
-                break;
-            case TargetType.M:
-                target_score = 30;
-                break;
-            case TargetType.S:
-                target_score = 100;
-                break;
-        }
-    }
 }
