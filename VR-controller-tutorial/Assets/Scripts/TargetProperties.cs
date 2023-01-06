@@ -79,6 +79,8 @@ public class TargetProperties : MonoBehaviour
             Debug.Log("Total Points: " + scoreCounter.GetTotalScore().ToString());
             // Check if level is complete:
             scoreCounter.CheckLevelFinished();
+            // Destroy current game object after delay:
+            Destroy(gameObject,2f);
         }
     }
 
