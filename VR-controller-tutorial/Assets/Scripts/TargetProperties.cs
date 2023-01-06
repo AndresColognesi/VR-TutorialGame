@@ -30,6 +30,21 @@ public class TargetProperties : MonoBehaviour
         return target_score;
     }
 
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        /***
+         * When hit by a bullet, removes the target object from scene 
+         * and sends the score to the Game Manager.
+         ***/
+
+        if (collision.collider.tag == "Bullet")
+        {
+            Debug.Log("Scored " + target_score.ToString() + " points!");
+        }
+
+    }
+
     //------------------------//
     //--- Built-in Methods ---//
     //------------------------//
